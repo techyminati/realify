@@ -33,6 +33,8 @@ check_realmeui_ver()
         FEATURE_PATH="/my_product/etc/extension/feature_com.coloros.oppoguardelf.xml"
     elif [[ $RUI_VER == V5.0 ]]; then
         FEATURE_PATH="/my_product/etc/extension/realme_product_rom_extend_feature_${PRJ_NAME}.xml"
+    elif [[ $RUI_VER == V6.0 ]]; then
+        FEATURE_PATH="/my_product/etc/extension/realme_product_rom_extend_feature_${PRJ_NAME}.xml"
     elif [[ $RUI_VER == V1.0 ]]; then
         FEATURE_PATH="/oppo_product/etc/permissions/com.oppo.features.os.xml"
     else
@@ -67,6 +69,7 @@ remove_lowend_features()
     remove_feature com.android.systemui.disable_volume_blur
     # Enables blur in the majority of the UI
     remove_feature com.android.systemui.gauss_blur_disabled
+    remove_feature com.android.systemui.pan_view_gauss_blur_disabled
     remove_feature com.android.systemui.charge_lizi_anim_disable
     remove_feature com.android.systemui.pan_view_gauss_blur_disabled
     # Enables launcher card
@@ -102,6 +105,9 @@ remove_lowend_features()
     remove_feature com.oplus.screenrecorder.light_weight_os
     # Enable Airview
     remove_feature com.oplus.floatassistant.air_view_disable
+    # Enable Scale animation
+    remove_feature com.android.launcher.overlay_disable_scale_animation
+    
     
 }
 
