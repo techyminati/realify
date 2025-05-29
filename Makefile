@@ -2,7 +2,7 @@ NAME := realify
 
 DATE := $(shell date "+%Y%m%d-%H%M")
 
-REV ?= v2.1
+REV ?= v3.0
 
 HASH ?= release
 
