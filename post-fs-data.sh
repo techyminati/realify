@@ -31,7 +31,7 @@ check_realmeui_ver()
         FEATURE_PATH="/my_product/etc/extension/realme_product_rom_extend_feature_${PRJ_NAME}.xml"
     elif [[ $RUI_VER == V4.0 ]]; then
         FEATURE_PATH="/my_product/etc/extension/feature_com.coloros.oppoguardelf.xml"
-    elif [[ $RUI_VER == V3.0 ]]; then
+    elif [[ $RUI_VER == V5.0 ]]; then
         FEATURE_PATH="/my_product/etc/extension/realme_product_rom_extend_feature_${PRJ_NAME}.xml"
     elif [[ $RUI_VER == V1.0 ]]; then
         FEATURE_PATH="/oppo_product/etc/permissions/com.oppo.features.os.xml"
@@ -60,11 +60,14 @@ remove_lowend_features()
     # Enables high end app launch animations
     remove_feature com.android.launcher.light_animator
     remove_feature com.oppo.launcher.light_animator
+    remove_feature com.oppo.launcher.DRAW_MODE_APP_RANK_DISABLED
+    remove_feature com.oppo.launcher.OVERLAY_DISABLED
     remove_feature com.android.launcher.light_folder_animation
     # Enable Volume Blur
     remove_feature com.android.systemui.disable_volume_blur
     # Enables blur in the majority of the UI
     remove_feature com.android.systemui.gauss_blur_disabled
+    remove_feature com.android.systemui.charge_lizi_anim_disable
     remove_feature com.android.systemui.pan_view_gauss_blur_disabled
     # Enables launcher card
     remove_feature com.android.launcher.card_disabled
@@ -93,6 +96,13 @@ remove_lowend_features()
     remove_feature oppo.sys.light.func.os7_ext
     # Enable Multiuser support (RUI 1)
     remove_feature oppo.multiuser.entry.unsupport
+    # Enable Dynamic Notification Sound
+    remove_feature oppo.settings.disable.dynamic_notification_sound
+    # Enable high end screen recorder @ 60fps
+    remove_feature com.oplus.screenrecorder.light_weight_os
+    # Enable Airview
+    remove_feature com.oplus.floatassistant.air_view_disable
+    
 }
 
 setup_mount()
