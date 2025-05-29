@@ -22,4 +22,3 @@ jobs:
         title: "${{ env.GITHUB_SHA }}"
         files: |
           *.zip
-          *.sha
